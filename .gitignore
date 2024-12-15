@@ -1,0 +1,5 @@
+.logs/
+.talos/*
+kubeconfig
+metal-arm64.raw
+metal-arm64.raw.xz

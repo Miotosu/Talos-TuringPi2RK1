@@ -1,0 +1,28 @@
+---
+# Ansible Playbook to download talos
+- name: Download talos for Turing RK1 (arm64)
+  ansible.builtin.get_url:
+    url: https://factory.talos.dev/image/{{ factory_schematic_id }}/{{ talos_version }}/metal-{{ arch }}.raw.xz
+    dest: .
+  register: download_result  # Register the result for debugging or verification
+
+- name: Display download result
+  ansible.builtin.debug:
+    var: download_result  # Display the result of the download task
+
+- name: Change file ownership
+  ansible.builtin.file:
+    path: metal-{{ arch }}.raw.xz
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+
+- name: Extract the raw image file
+  ansible.builtin.command:
+    cmd: xz -d metal-{{ arch }}.raw.xz
+  changed_when: true
+
+- name: Change file ownership
+  ansible.builtin.file:
+    path: metal-{{ arch }}.raw
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"

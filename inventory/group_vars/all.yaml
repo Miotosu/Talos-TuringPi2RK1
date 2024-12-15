@@ -1,0 +1,26 @@
+os: "linux" 
+arch: "arm64" # This is the architecture of the Turing RK1 modules for downloading image, not the architecture of the ansible host
+
+tpi_version: 1.0.7 # This repo DOES NOT have the leading v in the version URLs
+
+talos_version: v1.9.0-beta.1 # This repo DOES have the leading v in the version URLs
+talosctl_version: v1.9.0-beta.1 # This repo DOES have the leading v in the version URLs
+
+factory_schematic_id: df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0 # https://factory.talos.dev/ # This UUID adds the Turing RK1 overlay
+
+control_plane_ip: 192.168.200.11 # IP address of RK1 node 1
+
+worker_1: 192.168.200.12 # IP address of RK1 node 2
+worker_2: 192.168.200.13 # IP address of RK1 node 3
+worker_3: 192.168.200.14 # IP address of RK1 node 4
+
+config_directory: "./.talos" # Directory of generated config files will be stored
+config_file: "./.talos/talosconfig" # Generated talosconfig file for user with talosctl
+
+ansible_user: ryanw # Change to username on your ansible host
+ansible_become: true
+ansible_become_method: sudo
+
+bmc_ip: 192.168.200.15 # Turing Pi 2 BMC IP address
+bmc_user: root # Turing Pi 2 root username
+bmc_password: "turing" # Turing Pi 2 root password

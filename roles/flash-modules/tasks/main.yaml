@@ -1,0 +1,57 @@
+---
+# Flash all four RK1 nodes in a Turing Pi cluster
+- name: Flash the first RK1 node
+  ansible.builtin.command:
+    cmd: tpi flash --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 1 -i metal-{{ arch }}.raw
+  changed_when: true
+  tags:
+  - flash-module-1
+
+- name: Power on the first RK1 node
+  ansible.builtin.command:
+    cmd: tpi power on --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 1
+  changed_when: true
+  tags:
+  - flash-module-1
+
+- name: Flash the second RK1 node
+  ansible.builtin.command:
+    cmd: tpi flash --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 2 -i metal-{{ arch }}.raw
+  changed_when: true
+  tags:
+  - flash-module-2
+
+- name: Power on the second RK1 node
+  ansible.builtin.command:
+    cmd: tpi power on --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 2
+  changed_when: true
+  tags:
+  - flash-module-2
+
+- name: Flash the third RK1 node
+  ansible.builtin.command:
+    cmd: tpi flash --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 3 -i metal-{{ arch }}.raw
+  changed_when: true
+  tags:
+  - flash-module-3
+
+- name: Power on the third RK1 node
+  ansible.builtin.command:
+    cmd: tpi power on --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 3
+  changed_when: true
+  tags:
+  - flash-module-3
+
+- name: Flash the fourth RK1 node
+  ansible.builtin.command:
+    cmd: tpi flash --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 4 -i metal-{{ arch }}.raw
+  changed_when: true
+  tags:
+  - flash-module-4
+
+- name: Power on the fourth RK1 node
+  ansible.builtin.command:
+    cmd: tpi power on --host {{ bmc_ip }} --user {{ bmc_user }} --password {{ bmc_password }} -n 4
+  changed_when: true
+  tags:
+  - flash-module-4

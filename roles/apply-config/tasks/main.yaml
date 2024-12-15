@@ -1,0 +1,6 @@
+---
+# Generate Machine Configurations. 
+- name: Apply config to first node
+  ansible.builtin.command:
+    cmd: talosctl apply-config --insecure --nodes {{ control_plane_ip }} --file {{ config_directory }}/controlplane.yaml
+  changed_when: true
