@@ -6,7 +6,7 @@ tpi_version: 1.0.7 # This repo DOES NOT have the leading v in the version URLs
 talos_version: v1.9.0 # This repo DOES have the leading v in the version URLs
 talosctl_version: v1.9.0 # This repo DOES have the leading v in the version URLs
 
-factory_schematic_id: df156b82096feda49406ac03aa44e0ace524b7efe4e1f0e144a1e1ae3930f1c0 # https://factory.talos.dev/ # This UUID adds the Turing RK1 overlay
+factory_schematic_id: 85f683902139269fbc5a7f64ea94a694d31e0b3d94347a225223fcbd042083ae # https://factory.talos.dev/ # This UUID adds the Turing RK1 overlay, iscsi-tools extension, and util-linux-tools extension
 
 control_plane_ip: 192.168.200.11 # IP address of RK1 node 1
 
