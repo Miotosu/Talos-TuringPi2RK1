@@ -17,7 +17,7 @@ worker_3: 192.168.5.14 # IP address of RK1 node 4
 config_directory: "./.talos" # Directory of generated config files will be stored
 config_file: "./.talos/talosconfig" # Generated talosconfig file for user with talosctl
 
-ansible_user: ryanw # Change to username on your ansible host
+ansible_user: ansible # Change to username on your ansible host
 ansible_become: true
 ansible_become_method: sudo
 
