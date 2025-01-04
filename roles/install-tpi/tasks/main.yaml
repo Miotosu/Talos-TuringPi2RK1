@@ -2,5 +2,5 @@
 # Ansible Playbook to install tpi
 - name: Download and install tpi .deb package for Linux (arm64)
   ansible.builtin.apt:
-    deb: https://github.com/turing-machines/tpi/releases/download/{{ tpi_version }}/tpi-{{ tpi_version }}arm64.deb
+    deb: https://github.com/turing-machines/tpi/releases/download/{{ tpi_version }}/tpi-{{ tpi_version }}-aarch64-linux.deb 
   changed_when: true
